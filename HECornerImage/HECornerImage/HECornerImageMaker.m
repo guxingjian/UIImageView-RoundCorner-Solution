@@ -4,9 +4,6 @@
 #import <objc/runtime.h>
 
 @implementation HECornerImageMaker
-{
-    dispatch_queue_t _queue;
-}
 
 + (HECornerImageMaker *)imageMaker
 {
@@ -18,16 +15,6 @@
     });
     
     return maker;
-}
-
-- (instancetype)init
-{
-    if(self = [super init])
-    {
-        _queue = dispatch_queue_create("HEQueue", DISPATCH_QUEUE_SERIAL);
-    }
-    
-    return self;
 }
 
 - (UIImage*)drawMaskImage:(CGFloat)cR viewSize:(CGSize)size
